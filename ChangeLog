@@ -26,6 +26,13 @@ Release date: TBA
 
   Closes #2762
 
+* Fix ``RecursionError`` in ``_compute_mro()`` when circular class hierarchies
+  are created by name rebinding (e.g., ``pdb.Pdb = CustomPdb``). Resolve the
+  cycle in ``_inferred_bases`` by falling back to the original non-circular
+  inferred value.
+
+  Closes #2967
+
 
 What's New in astroid 4.1.1?
 ============================
